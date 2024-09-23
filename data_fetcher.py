@@ -16,7 +16,7 @@ def fetch_from_FRED(name,start_date, end_date):
     else:
         code=code_dict[name]
     df = web.DataReader([i for i in code], 'fred', start_date, end_date)
-    df.columns = [i for i in code]
+    df.columns = code
 
     return df
 
